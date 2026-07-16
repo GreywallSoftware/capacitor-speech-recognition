@@ -168,6 +168,9 @@ public class SpeechRecognition extends Plugin implements Constants {
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, bridge.getActivity().getPackageName());
         intent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, partialResults);
         intent.putExtra("android.speech.extra.DICTATION_MODE", partialResults);
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 60000);
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 60000);
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 60000);
 
         if (prompt != null) {
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, prompt);
